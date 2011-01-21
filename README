@@ -4,13 +4,13 @@ To get the latest text messages, you should sync your iPhone first. This script 
 
 Warning: This script will only work on OSX and if you have an iPhone that you sync with that computer. It has not been tested extensively, but has been tested using iPhone 4, Mac OSX, Ruby 1.9.2, iTunes 10.
 
-Requirements: Ruby, RubyGems, sqlite3-ruby, prawn
+Requirements: Ruby, RubyGems, sqlite3 , sqlite3-ruby, prawn
 
 If you don't have RubyGems: Go here (http://rubygems.org/pages/download) and follow the steps. Start by downloading the zip.
 
 Install Gems:
 gem install sqlite3
-gem install --remote sqlite-ruby
+gem install --remote sqlite3-ruby
 gem install prawn
 
 	Note: You may be required to put sudo before each gem install command
