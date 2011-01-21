@@ -1,0 +1,16 @@
+Just a simple ruby script to grab your texts from the backups on your computer and print them in PDF.
+
+Warning: This script will only work on OSX and has not been tested extensively. Tested On Mac OSX, Ruby 1.9.2
+
+Requirements: Ruby, RubyGems, sqlite3-ruby, prawn
+
+To Install Gems:
+gem install sqlite3-ruby
+gem install prawn
+
+How To Use:
+./relation-text.rb {phone number}
+
+Enter the phone number of person you want to grab the texts of, and a PDF will be created in the same directory
+
+Note: the number will do a "contains" search
