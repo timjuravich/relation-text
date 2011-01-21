@@ -30,34 +30,35 @@ Prawn::Document.generate(number + ".pdf") do
       
       if row['text']
         if row['flags'] == 2
-          bounding_box [0,cursor], :width => 200 do
+          
+          rounded_rectangle [0,cursor+20], 220, 150, 10
+          
+          bounding_box [10,cursor], :width => 200 do
+            fill_color 'F0F0F0'
+            fill
             move_down 2
+            fill_color '000000'
             text row['message_date']
             move_down 5
             text row['text']
             move_down 20
-            stroke do
-              line bounds.bottom_left,  bounds.top_left
-              line bounds.top_left,    bounds.top_right
-              line bounds.bottom_left, bounds.bottom_right
-              line bounds.bottom_right,  bounds.top_right
-            end
           end
         
-        elsif row['flags'] == 3        
+        elsif row['flags'] == 3      
+          
+          rounded_rectangle [bounds.right - 210,cursor+20], 220, 150, 10
+          
           bounding_box [bounds.right - 200,cursor], :width => 200 do
+            fill_color '66CC33'
+            fill
             move_down 2
+            fill_color '000000'
             text row['message_date']
             move_down 5
             text row['text']
             move_down 20
-            stroke do
-              line bounds.bottom_left,  bounds.top_left
-              line bounds.top_left,    bounds.top_right
-              line bounds.bottom_left, bounds.bottom_right
-              line bounds.bottom_right,  bounds.top_right
-            end
           end
+          
         end
         
       end
