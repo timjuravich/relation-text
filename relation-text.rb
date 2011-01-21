@@ -29,7 +29,7 @@ Prawn::Document.generate(number + ".pdf") do
       end
       
       if row['text']
-        if row['flags'] == 3        
+        if row['flags'] == 2
           bounding_box [0,cursor], :width => 200 do
             move_down 2
             text row['message_date']
@@ -44,7 +44,7 @@ Prawn::Document.generate(number + ".pdf") do
             end
           end
         
-        elsif row['flags'] == 2
+        elsif row['flags'] == 3        
           bounding_box [bounds.right - 200,cursor], :width => 200 do
             move_down 2
             text row['message_date']
@@ -57,9 +57,9 @@ Prawn::Document.generate(number + ".pdf") do
               line bounds.bottom_left, bounds.bottom_right
               line bounds.bottom_right,  bounds.top_right
             end
+          end
         end
         
-        end
       end
   end
 end
