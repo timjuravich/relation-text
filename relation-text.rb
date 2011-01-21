@@ -1,6 +1,5 @@
 require 'sqlite3'
 require 'prawn'
-require 'prawn/table'
 
 if ARGV[0]
   number = ARGV[0]
