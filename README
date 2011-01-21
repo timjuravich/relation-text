@@ -9,7 +9,8 @@ Requirements: Ruby, RubyGems, sqlite3-ruby, prawn
 If you don't have RubyGems: Go here (http://rubygems.org/pages/download) and follow the steps. Start by downloading the zip.
 
 Install Gems:
-gem install sqlite3-ruby
+gem install sqlite3
+gem install --remote sqlite-ruby
 gem install prawn
 
 	Note: You may be required to put sudo before each gem install command
