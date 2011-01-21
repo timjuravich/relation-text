@@ -1,4 +1,4 @@
-Just a simple ruby script to grab your texts from the backups on your computer and print them in PDF.
+A quick ruby script to grab the texts from the backups on your computer and print them in a PDF
 
 Warning: This script will only work on OSX and has not been tested extensively. Tested On Mac OSX, Ruby 1.9.2
 
