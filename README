@@ -15,6 +15,6 @@ gem install prawn
 	Note: You may be required to put sudo before each gem install command
 
 How To Use:
-./relation-text.rb {phone number}
+ruby relation-text.rb {phone number}
 
 Enter the digits of the phone number that you want to grab the texts of. Once complete, a PDF will be created in the same directory as the script. If there are many texts it may take a while and will create a large PDF.
