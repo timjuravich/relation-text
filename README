@@ -1,6 +1,8 @@
-A quick ruby script to grab the texts from the backups on your computer and print them in a PDF
+A quick ruby script to grab the texts on your iPhone from the backups on your computer and print them in a PDF.
 
-Warning: This script will only work on OSX and has not been tested extensively. Tested On Mac OSX, Ruby 1.9.2
+To get the latest text messages, you should sync your iPhone first. This script checks the backup folders that are created each time you sync your phone. It does not save anything externally or alter anything that is inside of these directories.
+
+Warning: This script will only work on OSX and for texts from  has not been tested extensively. Tested using iPhone 4, Mac OSX, Ruby 1.9.2, iTunes 10.
 
 Requirements: Ruby, RubyGems, sqlite3-ruby, prawn
 
@@ -15,4 +17,4 @@ gem install prawn
 How To Use:
 ./relation-text.rb {phone number}
 
-Enter the digits of the phone number that you want to grab the texts of and a PDF will be created in the same directory
+Enter the digits of the phone number that you want to grab the texts of. Once complete, a PDF will be created in the same directory as the script. If there are many texts it may take a while and will create a large PDF.
