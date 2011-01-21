@@ -13,4 +13,4 @@ How To Use:
 
 Enter the phone number of person you want to grab the texts of, and a PDF will be created in the same directory
 
-Note: the number will do a "contains" search
+Note: the script will do a "contains" search on the phone number passed as the argument.
