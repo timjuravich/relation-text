@@ -17,4 +17,7 @@ gem install prawn
 How To Use:
 ruby relation-text.rb {phone number}
 
+Example:
+ruby relation-text.rb 8675309
+
 Enter the digits of the phone number that you want to grab the texts of. Once complete, a PDF will be created in the same directory as the script. If there are many texts it may take a while and will create a large PDF.
