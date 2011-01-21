@@ -14,8 +14,8 @@ base_location = "/Users/" << ENV['USER'] << "/Library/Application\\ Support/Mobi
 cmd = "cd " << base_location << " && ls -t1 | head -n1"
 backup_directory = %x[ #{cmd} ]
 
-cmd = "cp " + base_location + backup_directory.split.join("\n") + "/3d0d7e5fb2ce288813306e4d4636395e047a3d28 temp.db"
-output = %x[ #{cmd} ]
+cmd = "cp " + base_location << backup_directory.split.join("\n") << "/3d0d7e5fb2ce288813306e4d4636395e047a3d28 temp.db"
+%x[ #{cmd} ]
 
 db = SQLite3::Database.new('temp.db')
 db.results_as_hash = true
@@ -65,4 +65,4 @@ Prawn::Document.generate(number + ".pdf") do
 end
 
 cmd = "rm temp.db"
-output = %x[ #{cmd} ]
+%x[ #{cmd} ]
