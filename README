@@ -2,7 +2,7 @@ A quick ruby script to grab the texts on your iPhone from the backups on your co
 
 To get the latest text messages, you should sync your iPhone first. This script checks the backup folders that are created each time you sync your phone. It does not save anything externally or alter anything that is inside of these directories.
 
-Warning: This script will only work on OSX and for texts from  has not been tested extensively. Tested using iPhone 4, Mac OSX, Ruby 1.9.2, iTunes 10.
+Warning: This script will only work on OSX and if you have an iPhone that you sync with that computer. It has not been tested extensively, but has been tested using iPhone 4, Mac OSX, Ruby 1.9.2, iTunes 10.
 
 Requirements: Ruby, RubyGems, sqlite3-ruby, prawn
 
