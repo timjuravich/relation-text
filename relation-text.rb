@@ -2,7 +2,7 @@ require 'sqlite3'
 require 'prawn'
 
 if ARGV[0]
-  number = ARGV[0]
+  phone_number = ARGV[0]
 else
   puts "Error: A number is required to run the script.\n"
   exit
@@ -19,19 +19,31 @@ cmd = "cp " + base_location << backup_directory.split.join("\n") << "/3d0d7e5fb2
 db = SQLite3::Database.new('temp.db')
 db.results_as_hash = true
 
-Prawn::Document.generate(number + ".pdf") do
-  
-  db.execute("select datetime(date, 'unixepoch') as message_date, text, flags from message where address like '%" << number << "%'") do |row|
-      
+handles = []
+
+# Find the account_guid of the phone number passed in
+db.execute("SELECT * FROM handle") do |row|
+  if row['id'].include? phone_number
+    puts row
+    handles << "'#{row['ROWID']}'"
+  end
+end
+
+Prawn::Document.generate(phone_number + ".pdf") do
+
+  db.execute("select datetime(date, 'unixepoch') as message_date, is_from_me, service, text, account_guid from message where handle_id IN (#{handles.join(',')})") do |row|
+      puts row
+      font "fonts/OpenSans-Regular.ttf"
+
       if cursor < 150
         start_new_page
       end
-      
+
       if row['text']
-        if row['flags'] == 2
-          
+        if row['is_from_me'] == 0
+
           rounded_rectangle [0,cursor+20], 220, 150, 10
-          
+
           bounding_box [10,cursor], :width => 200 do
             fill_color 'F0F0F0'
             fill
@@ -42,11 +54,11 @@ Prawn::Document.generate(number + ".pdf") do
             text row['text']
             move_down 20
           end
-        
-        elsif row['flags'] == 3      
-          
+
+        else
+
           rounded_rectangle [bounds.right - 210,cursor+20], 220, 150, 10
-          
+
           bounding_box [bounds.right - 200,cursor], :width => 200 do
             fill_color '66CC33'
             fill
@@ -57,9 +69,9 @@ Prawn::Document.generate(number + ".pdf") do
             text row['text']
             move_down 20
           end
-          
+
         end
-        
+
       end
   end
 end
