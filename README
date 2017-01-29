@@ -6,18 +6,13 @@ Warning: This script will only work on OSX and if you have an iPhone that you sy
 
 Requirements: Ruby, RubyGems, sqlite3, prawn
 
-If you don't have RubyGems: Go here (http://rubygems.org/pages/download) and follow the steps. Start by downloading the zip.
+#Installation#
+bundle install
 
-Install Gems:
-gem install sqlite3
-gem install prawn
-
-	Note: You may be required to put sudo before each gem install command
-
-How To Use:
+#How To Use:#
 ruby relation-text.rb {phone number}
 
-Example:
+#Example:#
 ruby relation-text.rb 8675309
 
 Enter the digits of the phone number that you want to grab the texts of. Once complete, a PDF will be created in the same directory as the script. If there are many texts it may take a while and will create a large PDF.
